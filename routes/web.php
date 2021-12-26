@@ -21,4 +21,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MyController::class, 'home']);
 Route::get('/table', [MyController::class, 'table']);
+Route::get('/weather', [MyController::class, 'weather']); 
 

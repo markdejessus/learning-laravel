@@ -13,7 +13,6 @@ class MyController extends Controller
 
  
     public function table(){
-
         $people = [];
         for ($i=0; $i < 5; $i++) {
             $response = Http::get('https://randomuser.me/api/')->json();
@@ -21,6 +20,20 @@ class MyController extends Controller
         };
 
         return view('table', ['people' => $people]);
+     }
 
+
+     public function weather(){
+        $cities = ['Cebu', 'Manila', 'Davao', 'Dumaguete'];
+
+        $weather = [];
+
+        foreach ($cities as $city) {
+            $response = Http ::get('http://api.weatherapi.com/v1/current.json?key=227d409c8ac5479094a100347212612&q=' . $city)->json();
+            $weather[] = $response;
+        }
+        // dd($weather);
+        return view ('weather', ['weather' => $weather]);
+        
      }
 }

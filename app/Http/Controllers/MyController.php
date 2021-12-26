@@ -24,8 +24,8 @@ class MyController extends Controller
 
 
      public function weather(){
-        $cities = ['Cebu', 'Manila', 'Davao', 'Dumaguete'];
-
+        $cities = ['Cebu', 'Manila', 'Davao', 'Dumaguete', 'Dubai', 'Hong Kong', 'New York', 'Baguio', 'Pasay', 'Sasmuan', 'Cotabato City', 'Siargao'];
+        sort($cities);
         $weather = [];
 
         foreach ($cities as $city) {
